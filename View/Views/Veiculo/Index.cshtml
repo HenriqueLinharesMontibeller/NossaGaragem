@@ -7,7 +7,7 @@
 
 <div class="row mb-3">
     <div class="col-12">
-        <a href="/veiculo/cadastro" class="btn btn-primary float-right">Novo Veículo</a>
+        <a href="/veiculo/cadastro" class="btn btn-primary float-right"><i class="fas fa-plus"></i> Novo Veículo</a>
     </div>
 </div>
 
@@ -30,6 +30,18 @@
             <th>Ação</th>
         </tr>
     </tfoot>
-    <tbody></tbody>
+    <tbody>
+        @foreach (Model.Veiculo veiculo in ViewBag.Veiculos)
+        {
+            <tr>
+                <td>@veiculo.Id</td>
+                <td>@veiculo.categoria.Nome</td>
+                <td>@veiculo.Modelo</td>
+                <td>@veiculo.Valor</td>
+                <td></td>
+           
+            </tr>
+        }
+    </tbody>
 </table>
 
